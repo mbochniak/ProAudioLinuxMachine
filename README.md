@@ -1,2 +1,2 @@
 # Pro Audio Linux Machine
-Scripts to run in terminal when commissioning a new Linux computer for Pro Audio
+I intended this to help commission a new OS install for a Linux-based Pro Audio machine.
