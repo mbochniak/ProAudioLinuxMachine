@@ -18,6 +18,8 @@ I chose the Live version of Debian so I could test my hardware before committing
 
 This guide is designed so users can follow along using terminal commands to set up their Linux system step by step. Note: Wine and Yabridge are only necessary if you plan to use Windows-based audio plugins. If you prefer to stick exclusively with Linux-native software, you can skip installing these tools.
 
+References:<br>
+https://www.youtube.com/watch?v=cnUo3SPQQmw
 
-
+https://github.com/brendaningram/linux-audio-setup-scripts/blob/main/debian/12/install-audio.sh
 
