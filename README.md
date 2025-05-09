@@ -16,8 +16,7 @@ https://cdimage.debian.org/debian-cd/current-live/amd64/iso-hybrid/debian-live-1
 
 I chose the Live version of Debian so I could test my hardware before committing to a full installation. This allowed me to verify that components like Wi-Fi and my audio interface were working properly before installing the OS on my computer’s hard drive.  I would recommend that everyone do this before committing to a new install.  The last thing you want is to be searching for drivers after commissioning a new computer.
 
-<b>Update our system</b><br>
-  sudo apt update && sudo apt upgrade -y
+I intended this so that people can use the Terminal Commands and go through each step as you set up your Linux computer.   Note, Wine and YaBridge are only for users who want the ability to use Windows plugins.  If you want to stay 100% using only Linux software, then there is no need to install these tools.  
 
 
 
