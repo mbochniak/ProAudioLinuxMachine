@@ -12,6 +12,6 @@ For this project, I chose Debian 12 (Bookworm) with the KDE Plasma desktop envir
 4)User-Friendly Desktop Environment: KDE Plasma offers a familiar and intuitive interface, making it a smooth transition for users coming from Windows or macOS.
 
 Here is the location of the ISO I used to commission my machine:
-https://www.debian.org/CD/live/ and the link to download the installer:  https://cdimage.debian.org/debian-cd/current-live/amd64/iso-hybrid/debian-live-12.10.0-amd64-kde.iso
+https://cdimage.debian.org/debian-cd/current-live/amd64/iso-hybrid/debian-live-12.10.0-amd64-kde.iso
 
 
