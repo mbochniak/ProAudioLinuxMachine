@@ -14,4 +14,5 @@ For this project, I chose Debian 12 (Bookworm) with the KDE Plasma desktop envir
 Here is the location of the ISO I used to commission my machine:
 https://cdimage.debian.org/debian-cd/current-live/amd64/iso-hybrid/debian-live-12.10.0-amd64-kde.iso
 
+I chose the Live version of Debian so I could test my hardware before committing to a full installation. This allowed me to verify that components like Wi-Fi and my audio interface were working properly before installing the OS on my computer’s hard drive.
 
