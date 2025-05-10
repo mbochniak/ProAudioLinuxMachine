@@ -40,6 +40,30 @@ notify "Add ourselves to the audio group"
 sudo usermod -a -G audio $USER
 
 # ---------------------------
+# Disable CPU frequency scaling
+# ---------------------------
+sudo cpupower frequency-set -g performance
+
+# ---------------------------
+# Kernel tweaks
+# ---------------------------
+sudo nano /etc/default/grub
+#change or verify GRUB_CMDLINE_LINUX="" to GRUB_CMDLINE_LINUX="preempt=full threadirqs cpufreq.default_governor=performance"
+sudo update-grub
+
+# ---------------------------
+# Install rtirq-init, a startup script for real-time preemption-enabled kernels, which can improve audio latency by prioritizing IRQ threads
+# ---------------------------
+sudo apt install rtirq-init
+
+# ---------------------------
+# Install Jack2 + Jack D-Bus
+# ---------------------------
+sudo apt install qjackctl jackd2 pulseaudio-module-jack
+
+
+
+# ---------------------------
 # Wine (staging)
 # This is required for yabridge, which is how you can use some Windows VST and VST3 plugins
 # ---------------------------
