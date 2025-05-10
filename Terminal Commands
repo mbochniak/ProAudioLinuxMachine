@@ -24,6 +24,7 @@ sudo apt install rtirq-init
 # ---------------------------
 # limits
 # ---------------------------
+echo '@audio - rtprio 90
 @audio - memlock unlimited' | sudo tee -a /etc/security/limits.d/audio.conf
 
 # ---------------------------
