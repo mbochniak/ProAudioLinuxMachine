@@ -40,6 +40,7 @@ sudo usermod -a -G audio $USER
 # ---------------------------
 # Disable CPU frequency scaling
 # ---------------------------
+sudo apt install linux-cpupower
 sudo cpupower frequency-set -g performance
 
 # ---------------------------
