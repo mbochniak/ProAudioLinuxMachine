@@ -1,7 +1,6 @@
 # ---------------------------
 # Update our system
 # ---------------------------
-notify "Update the system"
 sudo apt update && sudo apt upgrade -y
 
 # ---------------------------
@@ -14,41 +13,7 @@ sudo apt install linux-image-liquorix-amd64 linux-headers-liquorix-amd64 -y
 # ---------------------------
 # grub
 # ---------------------------
-notify "Modify GRUB options"
-sudo sed -i 's/GRUB_CMDLINE_LINUX_DEFAULT="quiet"/GRUB_CMDLINE_LINUX_DEFAULT="quiet threadirqs cpufreq.default_governor=performance"/g' /etc/default/grub
-sudo update-grub
-
-# ---------------------------
-# limits
-# ---------------------------
-notify "Modify limits.d/audio.conf"
-echo '@audio - rtprio 90
-@audio - memlock unlimited' | sudo tee -a /etc/security/limits.d/audio.conf
-
-
-# ---------------------------
-# sysctl.conf
-# ---------------------------
-notify "Modify /etc/sysctl.conf"
-echo 'vm.swappiness=10
-fs.inotify.max_user_watches=600000' | sudo tee -a /etc/sysctl.conf
-
-# ---------------------------
-# Add the user to the audio group
-# ---------------------------
-notify "Add ourselves to the audio group"
-sudo usermod -a -G audio $USER
-
-# ---------------------------
-# Disable CPU frequency scaling
-# ---------------------------
-sudo cpupower frequency-set -g performance
-
-# ---------------------------
-# Kernel tweaks
-# ---------------------------
-sudo nano /etc/default/grub
-#change or verify GRUB_CMDLINE_LINUX="" to GRUB_CMDLINE_LINUX="preempt=full threadirqs cpufreq.default_governor=performance"
+sudo sed -i 's/^\(GRUB_CMDLINE_LINUX_DEFAULT="[^"]*\)"/\1 threadirqs cpufreq.default_governor=performance"/' /etc/default/grub
 sudo update-grub
 
 # ---------------------------
@@ -57,11 +22,30 @@ sudo update-grub
 sudo apt install rtirq-init
 
 # ---------------------------
-# Install Jack2 + Jack D-Bus
+# limits
+# ---------------------------
+@audio - memlock unlimited' | sudo tee -a /etc/security/limits.d/audio.conf
+
+# ---------------------------
+# sysctl.conf
+# ---------------------------
+echo 'vm.swappiness=10
+fs.inotify.max_user_watches=600000' | sudo tee -a /etc/sysctl.conf
+
+# ---------------------------
+# Add the user to the audio group
+# ---------------------------
+sudo usermod -a -G audio $USER
+
+# ---------------------------
+# Disable CPU frequency scaling
+# ---------------------------
+sudo cpupower frequency-set -g performance
+
+# ---------------------------
+# Install Jack2 + Jack D-Bus, installing JACK for the first time asks to setup rt-privilges for your current user, which you should do
 # ---------------------------
 sudo apt install qjackctl jackd2 pulseaudio-module-jack
-
-
 
 # ---------------------------
 # Wine (staging)
