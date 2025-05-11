@@ -50,6 +50,11 @@ sudo cpupower frequency-set -g performance
 sudo apt install qjackctl jackd2 pulseaudio-module-jack
 
 # ---------------------------
+# Install wget
+# ---------------------------
+sudo apt install wget
+
+# ---------------------------
 # Wine (staging)
 # This is required for yabridge, which is how you can use some Windows VST and VST3 plugins
 # ---------------------------
